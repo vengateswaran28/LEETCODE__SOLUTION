@@ -1,18 +1,21 @@
-class Solution {
+public class Solution {
     public int findMinimumOperations(String s1, String s2, String s3) {
-    String str1="";
-    String str2="";
-        int len1=s1.length();
-        int len2=s2.length();
-       for(int i=0;i<len1-1;i++)
-       str1+=s1.charAt(i);
-       System.out.print(str1);
-       for(int i=0;i<len2-1;i++) 
-       str2+=s1.charAt(i);
-       System.out.print(str2);
-       if(str1.equals(str2)&& str1.equals(s3))
-       return 2;
-       else
-       return -1;
+        int len = Math.min(s1.length(), Math.min(s2.length(), s3.length())); 
+        int sum = s1.length() + s2.length() + s3.length(); 
+
+        if (s1.charAt(0) != s2.charAt(0) || s1.charAt(0) != s3.charAt(0) || s2.charAt(0) != s3.charAt(0)) {
+            return -1; 
+        }
+
+        for (int i = 0; i < len; i++) {
+            if (s1.charAt(i) == s2.charAt(i) && s2.charAt(i) == s3.charAt(i)) {
+                sum -= 3; 
+            } else {
+                break; 
+            }
+        }
+
+        return sum; 
     }
 }
+
