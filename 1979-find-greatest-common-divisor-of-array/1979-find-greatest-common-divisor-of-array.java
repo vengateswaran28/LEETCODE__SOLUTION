@@ -5,7 +5,7 @@ class Solution {
        int start=nums[0];
        int end=nums[len-1];
        int max=0;
-       for(int i=1;i<200;i++){
+       for(int i=1;i<200000;i++){
         if(start%i==0 && end%i==0){
             max=i;
         }
