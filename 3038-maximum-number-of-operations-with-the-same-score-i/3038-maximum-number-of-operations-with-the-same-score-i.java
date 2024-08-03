@@ -9,7 +9,7 @@ class Solution {
             sum=nums[i]+nums[i+1];
             if(sum==sum1){
                 c++;
-                i+=2;
+                i=i+2;
             
             }
             else
